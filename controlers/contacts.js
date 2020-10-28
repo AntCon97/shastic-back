@@ -4,7 +4,7 @@ exports.getContacts = async (req, res, next) => {
     try{
         const contacts = await Contact.find(req.query);
 
-        res.status(200).json({ success: true, data: contacts});
+        res.status(200).json({data: contacts});
     }catch(err){
         res.status(400).json({ success: false }); 
     }
@@ -17,7 +17,7 @@ exports.getContact = async (req, res, next) => {
             return res.status(400).json({ success: false }); 
         }
 
-        res.status(200).json({ success: true, data: contact});
+        res.status(200).json({data: contact});
     }catch(err){
         res.status(400).json({ success: false }); 
     }
@@ -34,6 +34,6 @@ exports.updateContacts = async (req, res, next) => {
         return res.status(400).json({ success: false})
     }
 
-    res.status(200).json({ success: true, data: contact})
+    res.status(200).json({data: contact})
 } 
 

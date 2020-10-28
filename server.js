@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
+var cors = require('cors');
 
 dotenv.config({ path: './config/config.env'});
 
@@ -13,6 +14,7 @@ connectDB();
 const app = express();
 
 app.use(express.json())
+app.use(cors())
 
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));

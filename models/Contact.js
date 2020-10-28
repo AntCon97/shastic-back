@@ -16,7 +16,7 @@ const ContactSchema = mongoose.Schema({
       },
       number: {
         unique: false,
-        type: Number,
+        type: String,
         required: [true, 'Please add a number'],
         trim: true,
         
