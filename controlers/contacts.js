@@ -24,7 +24,7 @@ exports.getContact = async (req, res, next) => {
 } 
 
 exports.updateContacts = async (req, res, next) => {
-    console.log(req.body);
+    
     const contact = await Contact.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true
@@ -37,3 +37,18 @@ exports.updateContacts = async (req, res, next) => {
     res.status(200).json({data: contact})
 } 
 
+exports.createContact = async (req, res, next) => {
+
+    try{
+        const contact = await Contact.create(req.body);
+
+    res.status(201).json({
+        success: true, 
+        data: contact
+    })
+    }catch{
+        res.status(400).json({ success: false })
+    }
+    
+
+} 
