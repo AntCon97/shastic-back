@@ -1,4 +1,4 @@
-This is a simple nodeJS backend api to get and update a contact list of 30 contacts made for a shastic front end coding challenge
+This is a simple nodeJS backend api to get and update a contact list of contacts
 
 #usage
 
